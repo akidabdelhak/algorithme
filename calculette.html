@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="calcul.css"/>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<title>Calculatrice</title>
+</head>
+<body>
+
+<table id="calculette" cellspacing="10">
+<tr>
+	<td colspan="4" class="affich">
+
+		<div id="op"></div>
+		<div id="result"></div>
+
+	</td>
+</tr>
+<tr style="height:20px">
+	<td></td>
+	<td></td>
+	<td></td>
+	<td class="button">Reset</td>
+</tr>
+
+<tr>
+	<td class="button" >7</td>
+	<td class="button">8</td>
+	<td class="button">9</td>
+	<td class="button">/</td>
+</tr>
+
+<tr>
+	<td class="button">4</td>
+	<td class="button">5</td>
+	<td class="button">6</td>
+	<td class="button">*</td>
+</tr>
+
+<tr>
+	<td class="button">1</td>
+	<td class="button">2</td>
+	<td class="button">3</td>
+	<td class="button">-</td>
+</tr>
+
+<tr>
+	<td class="button">0</td>
+	<td class="button">,</td>
+	<td class="button">+</td>
+	<td class="button">=</td>
+</tr>
+</table>
+
+<script src="jquery.js"></script>
+<script>
+var val = "";
+var tg = "";
+var button = "";
+
+$(".button").click(function()
+{
+	
+	 button = $(this).html();
+	
+	if(button == "=")
+	{
+		tg = eval(val);
+	}
+	else if(button == "Reset")
+	{
+		val = "";
+		tg = "";
+	}
+	else
+	{
+		val += button;
+	}
+	
+	$("#op").html(val);
+	$("#result").html(tg);
+	
+	
+});
+
+
+
+</script>
+
+
+	</div>
+
+
+
+	<script src="jquery.js"></script>
+
+</body>
+</html>
